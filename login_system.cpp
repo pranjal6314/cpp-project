@@ -8,14 +8,15 @@ void forgot();
 
 int main(){
     int c; //choice 
-    cout<<"\t\t\t__________________________________________________\n\n\n";
-    cout<<"\t\t\t       Welcome to the login page      \n\n\n";
-    cout<<"\t\t\t__________   Menu   _______\n\n";
-    cout<<"                                  \n\n";
-    cout<<"\t|  Press 1 to Login            |\n";
-    cout<<"\t|  Press 2 to Register          |\n";
-    cout<<"\t|  Press 3 if you forgot your password \n";
-    cout<<"\t|  Press 4 to Exit!\n";
+    cout<<"\t\t\t\t\t\t__________________________________________________\n\n";
+    cout<<"\t\t\t\t\t\t            Welcome to the login page      \n\n\n";
+    p:
+    cout<<"\t\t\t\t\t\t        _______       Menu       _______\n\n";
+    cout<<"                                  \n";
+    cout<<"\t\t\t\t|  Press 1 to Login                        |\n";
+    cout<<"\t\t\t\t|  Press 2 to Register                     |\n";
+    cout<<"\t\t\t\t|  Press 3 if you forgot your password     |\n";
+    cout<<"\t\t\t\t|  Press 4 to Exit!                        |\n";
     cout<<"\n\t\t\t Please enter your choice : ";
     cin>>c;
     cout<<endl;
@@ -31,22 +32,23 @@ int main(){
             forgot();
             break;
         case 4:
-            cout<<"\t\t Thank You \n\n";
+            cout<<"\t\t Thank You🙏🫂\n\n";
             // exit();
             break;
         default:
             system("cls");// for clearing screen
             cout<<"\t\t please select from given option . \n\n";
-            main();
+            // main(); 
+            goto p;
     }
 }
 
 void login(){
     int count ;
     string userid,password,id,pass;
-    system("csl");
+    system("cls");
     cout<<"\t\t Please enter the user name and password : " <<endl;
-    cout<<"\t\t USENAME ";
+    cout<<"\t\t\t USENAME ";
     cin>>userid;
     cout<<"\t\t\t PASSWORD ";
     cin>>password;
@@ -67,8 +69,9 @@ void login(){
         cout<<"\t\t Thanks for loggin in ! \n ";
         main();
     }else{
-        cout<<"\t\t\n LOGIN ERROR \n Please check you username and password .\n ";
+        cout<<"\t\t\n **LOGIN ERROR** \n Please check you username and password ! and Try Again :) \n ";
         main();
+        // goto p;
     }
 
 }
@@ -77,9 +80,9 @@ void login(){
 void registration(){
     string reguserId,regpassword,regid,regpass;
     system("cls");
-    cout<<"\t\t\n Enter the username : ";
+    cout<<"\t\t\n For new account Enter the username : ";
     cin>>reguserId;
-    cout<<"\t\t\t Enter the password : ";
+    cout<<" Enter the password : ";
     cin>>regpassword;
 
     //to write in the file
@@ -93,10 +96,10 @@ void registration(){
 void forgot(){
     int option;
     system("cls");
-    cout<<"\t\t\n You forgot the password no worries \n";
+    cout<<"\t\t\nYou forgot the password no worries :\n";
     cout<<"\t\t Press 1 to search your id by username "<<endl;
-    cout<<"Press 2 to go back to main menu "<<endl;
-    cout<<"\t\t\t Enter your choice : ";
+    cout<<"\t\t Press 2 to go back to main menu "<<endl;
+    cout<<"\t\t Enter your choice : ";
     cin>>option;
     switch(option){
         case 1:{
@@ -114,7 +117,7 @@ void forgot(){
 
             if(count==1){
                 cout<<"\t\t\n\n Your account is found ! \n";
-                cout<<"\n\n Your password is : "<<spass;
+                cout<<"\n\n Your password is : "<<spass<<endl;
                 main();
             }
             else{
